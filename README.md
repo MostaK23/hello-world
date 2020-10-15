@@ -1,2 +1,1 @@
-# hello-world 
-My name is Artiom 
+# hello-world
