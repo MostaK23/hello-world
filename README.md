@@ -29,10 +29,6 @@ namespace NewBigCalculator
                 digits_1[i] = Convert.ToInt32(Char.GetNumericValue(array1[i]));
             }
 
-            /*for (int i = 0; i < TheFirstLength; i++)
-            {
-               Console.Write(digits_1[i]);
-            }*/
 
             return digits_1;
         }
@@ -61,17 +57,13 @@ namespace NewBigCalculator
              {
                 digits_2[i] = Convert.ToInt32(Char.GetNumericValue(array2[i]));
              }
-             /*for (int i = 0; i < TheSecondLength; i++)
-             {
-                Console.Write(digits_2[i]);
-             }*/
 
             return digits_2;
         }
     }
 
-        class Program
-        {
+    class Program
+    {
             static void Main(string[] args)
             {           
                 TheFirstNumber number1 = new TheFirstNumber();                           
@@ -122,121 +114,12 @@ namespace NewBigCalculator
                         {
                             reverse2[i] = digit2[j2];
                             j2--;
-                        }
+                        }                      
 
+                //вычисление суммы если первое число длиннее второго
 
-                    //вычисление разности если первое число больше второго
-
-            if(max == TheFirstLength && TheFirstLength != TheSecondLength)
-            {
-                int i = 0;
-                    
-                while(i < TheFirstLength)
+                if (max == TheFirstLength && TheFirstLength != TheSecondLength)
                 {
-                    if (i < TheSecondLength)
-                    {
-                        if(try_diff == true)
-                        {
-                            reverse1[i]--;
-                            try_diff = false;
-                        }
-
-                        if (reverse1[i] >= reverse2[i])
-                        {
-                            diff[i] = reverse1[i] - reverse2[i];
-                        }
-               
-                        if (reverse1[i] < reverse2[i])
-                        {
-                            int j = i;
-                            while(reverse1[j] == 0)
-                            {                                                                
-                                if (reverse2[j] > 0)
-                                {
-                                    reverse1[j] += 10;
-                                }                                                               
-                                j++;                                  
-                            }
-                            diff[i] = reverse1[i] - reverse2[i];
-                        }
-                        i++;                        
-                    }
-                    else
-                    {                        
-                        diff[i] = Math.Abs(reverse1[i]);
-                        i++;
-                        if (try_diff == true)
-                        {
-                            diff[i - 1]--;
-                            try_diff = false;
-                        }
-                    }
-                                                                
-                }
-            }
-
-            //вычисление разности если длина первого равна длине второго
-
-            
-
-            if(TheFirstLength == TheSecondLength)
-            {
-                int i = 0;
-                while(i < max)
-                {
-                    if (i < max - 1)
-                    {
-                        if(try_diff == true)
-                        {
-                            diff[i]--;
-                            try_diff = false;
-                        }
-
-                        if (reverse1[i] > reverse2[i])
-                        {
-                            diff[i] = reverse1[i] - reverse2[i];
-                        }
-                        if(reverse1[i] == reverse2[i])
-                        {
-                            diff[i] = 0;
-                        }
-                        if(reverse1[i] < reverse2[i])
-                        {
-                            diff[i] = Math.Abs((reverse1[i] + 10) - reverse2[i]);
-                            try_diff = true;      
-                        }
-                        i++;
-                    }
-                    else
-                    {
-                        if(i == max - 1)
-                        {
-                            diff[i] = reverse1[i] - reverse2[i];                          
-                            if(try_diff == true)
-                            {
-                                diff[i] = diff[i] - 1;
-                                try_diff = false;
-                            }
-                            i++;
-                        }
-
-                    }                                         
-                }
-            }
-
-
-
-            for(int i = max - 1; i > -1; i --)
-            {
-                Console.Write(diff[i]);
-            }
-
-
-
-            /*     //вычисление суммы если первое число длиннее второго
-
-             if (max == TheFirstLength && TheFirstLength != TheSecondLength)
-             {
                  int i = 0;
 
                  while (i < TheFirstLength)
@@ -275,7 +158,7 @@ namespace NewBigCalculator
                          i++;
                      }
                  }
-             }
+                }
 
 
              //вычисление суммы если второе число длиннее первого
@@ -352,17 +235,12 @@ namespace NewBigCalculator
              Console.WriteLine();
              Console.WriteLine("Сумма равна: \n");
 
-             for (int i = max - 1;i > -1; i--)
+                 for (int i = max - 1;i > -1; i--)
                  {
                      Console.Write(summ[i]);
                  }
              Console.WriteLine();
-
-                         */
-
-
-            //разность
-
-        }
-        }
+                                                               
+            }
+    }
 }
